@@ -14,6 +14,7 @@ jobs:
         run: |
           mkdir -p out/img
           cp index.html style.css app.js out/
+          mkdir -p out/kit && cp kit/index.html out/kit/
           for f in img/*.b64; do base64 -d "$f" > "out/${f%.b64}"; done
           touch out/.nojekyll
           ls -la out out/img
